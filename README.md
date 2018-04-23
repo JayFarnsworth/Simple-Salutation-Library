@@ -19,4 +19,4 @@ returns
 returns
 ```Greetings and Salutations Jay Farnsworth```
 
-[Usage Example on CodePen:](https://codepen.io/kubrickan/pen/KRVBja)
+[Styled Usage Example on CodePen:](https://codepen.io/kubrickan/pen/KRVBja)
