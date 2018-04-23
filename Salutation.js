@@ -1,16 +1,10 @@
-var Salutation = (function(firstName, lastName){
-  
-  var methods = {}
-
-  methods.fullName = function() {
-    return `${firstName} ${lastName}`;
+var Salutation = function(firstName, lastName){
+  return {
+    fullName: function () {
+      return `${firstName} ${lastName}`;
+    },
+    greeting: function () {
+      return `Greetings and Salutations ${firstName} ${lastName}`;
+    }
   }
-  methods.greeting = function() {
-    return `Greetings and Salutations ${firstName} ${lastName}`;
-  }
-
-  return methods
-
-})
-
-// module.exports = { salutation };
+}
