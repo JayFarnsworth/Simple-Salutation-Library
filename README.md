@@ -18,3 +18,5 @@ returns
 ```mySalutation.greeting()```
 returns
 ```Greetings and Salutations Jay Farnsworth```
+
+[Usage Example on CodePen:](https://codepen.io/kubrickan/pen/KRVBja)
