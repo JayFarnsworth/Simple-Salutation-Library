@@ -15,6 +15,6 @@ Once initialized with a first and last name given as arguments, call as follows:
 returns
 ```Jay Farnsworth```
 
-```mySalutation.greeting```
+```mySalutation.greeting()```
 returns
 ```Greetings and Salutations Jay Farnsworth```
