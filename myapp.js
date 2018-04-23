@@ -1,9 +1,7 @@
 document.querySelector('#salutationButton').addEventListener('click', addSalutation)
 document.querySelector('#fullNameButton').addEventListener('click', addFullName)
 
-
 var mySalutation = Salutation('Peter', 'Forsberg')
-
 
 function addSalutation(){
   var greeting = mySalutation.greeting();

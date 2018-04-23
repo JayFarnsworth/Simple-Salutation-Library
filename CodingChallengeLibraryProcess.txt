@@ -1,0 +1,60 @@
+TinyMCE - Coding Challenges
+
+#2: A Simple Custom Library
+
+--Detailed Steps for Library Creation Process--
+
+Created Salutation.js file. Defined variable “Salutation” as a class with a constructor taking firstName and lastName as arguments. I stored the the name variables as this.firstName and this.lastName within the constructor. I defined the methods within the class. When invoking this Salutation class in the other myapp.js file, I realized that to properly initialize the class I would need to use “new” Salutation(). This is contrary to the instructed initialization syntax, and therefore I need to construct this library differently.
+
+
+class Salutation {
+ constructor(firstName, lastName){
+   this.firstName = firstName,
+   this.lastName = lastName
+ }
+ fullName() {
+   return `${firstName} ${lastName}`;
+ }
+ greeting() {
+   return `Greetings and Salutations ${firstName} ${lastName}`;
+ }
+}
+
+
+I defined a variable, “Salutation” as a function taking firstName and lastName arguments. Within the function I define the name variables as “this.firstName” and “this.lastName.” I defined the methods as “this.fullName = function(){}” etc… The whole Salutation function simply returns “this”. This method also works, however I remembered how many unexpected results can potentially come from using “this.” It can have unexpected values depending on how it is invoked. For example, using the .call() method would override this and give an undesired result. It’s not a risk given the simple context the library will be used, but given that information, I decided to try one more method.
+
+
+var Salutation = function (firstName, lastName) {
+
+
+ this.firstName = firstName;
+ this.lastName = lastName;
+ this.fullName = function () {
+   return `${firstName} ${lastName}`;
+ }
+ this.greeting = function () {
+   return `Greetings and Salutations ${firstName} ${lastName}`;
+ }
+ return this
+}
+
+
+Finally, I defined Salutation as a function taking firstName and lastName name arguments. The function returns an object with methods fullName and greeting keys with values of their functions. I felt this was the safest way to construct the library and control scope. 
+
+
+class Salutation {
+ constructor(firstName, lastName){
+   this.firstName = firstName,
+   this.lastName = lastName
+ }
+ fullName() {
+   return `${firstName} ${lastName}`;
+ }
+ greeting() {
+   return `Greetings and Salutations ${firstName} ${lastName}`;
+ }
+}
+
+I created the myapp.js file with event listeners for the two buttons and their respective functions calling the Salutation() method and populating the <div>s with their content. Added some very basic css styling.
+
+My biggest issue in this exercise was defining my library outside of a node environment like I’m used to, and making the appropriate methods available with module.exports. I’m so far removed from importing multiple vanilla js files into an html document that I had forgotten that the first’s variables and functions are visible in the second document sequentially. I overall did not have much difficulty with this exercise.
